@@ -1,12 +1,24 @@
 import { Injectable } from '@angular/core';
+import { BehaviorSubject } from "rxjs/BehaviorSubject";
+import "rxjs/add/operator/share";
 
 @Injectable()
 export class ThemeService {
   jsThemeColors: {};
+  jsThemeColorsSource = new BehaviorSubject<any>({});
+  jsThemeColors$ = this.jsThemeColorsSource.asObservable().share();
   tsThemeColors: {};
+  tsThemeColorsSource = new BehaviorSubject<any>({});
+  tsThemeColors$ = this.tsThemeColorsSource.asObservable().share();
   cssThemeColors: {};
+  cssThemeColorsSource = new BehaviorSubject<any>({});
+  cssThemeColors$ = this.cssThemeColorsSource.asObservable().share();
   sassThemeColors: {};
+  sassThemeColorsSource = new BehaviorSubject<any>({});
+  sassThemeColors$ = this.sassThemeColorsSource.asObservable().share();
   htmlThemeColors: {};
+  htmlThemeColorsSource = new BehaviorSubject<any>({});
+  htmlThemeColors$ = this.htmlThemeColorsSource.asObservable().share();
 
 
   constructor() {
@@ -167,6 +179,11 @@ export class ThemeService {
       tagTreeLevel5: '000',
       tagTreeLevel6: '000'
     };
+    this.jsThemeColorsSource.next(this.jsThemeColors);
+    this.tsThemeColorsSource.next(this.tsThemeColors);
+    this.cssThemeColorsSource.next(this.cssThemeColors);
+    this.sassThemeColorsSource.next(this.sassThemeColors);
+    this.htmlThemeColorsSource.next(this.htmlThemeColors);
   }
 
   getTheme(language: string) {
@@ -184,22 +201,27 @@ export class ThemeService {
 
   setJSTheme(theme: {}) {
     this.jsThemeColors = theme;
+    this.jsThemeColorsSource.next(this.jsThemeColors);
   }
 
   setTSTheme(theme: {}) {
     this.tsThemeColors = theme;
+    this.tsThemeColorsSource.next(this.tsThemeColors);
   }
 
   setCSSTheme(theme: {}) {
     this.cssThemeColors = theme;
+    this.cssThemeColorsSource.next(this.cssThemeColors);
   }
 
   setSASSTheme(theme: {}) {
     this.sassThemeColors = theme;
+    this.sassThemeColorsSource.next(this.sassThemeColors);
   }
 
   setHTMLTheme(theme: {}) {
     this.htmlThemeColors = theme;
+    this.htmlThemeColorsSource.next(this.htmlThemeColors);
   }
 
 }

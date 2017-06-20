@@ -9,21 +9,17 @@ import { ThemeService } from "../../Services/theme.service";
 export class SelectionControlsComponent implements OnInit {
   @Input() codeModule: string;
   @Input() theme: {};
-  // @Output() onColorSelected: EventEmitter<{}> = new EventEmitter();
-  jsColors: {};
-  tsColors: {};
-  cssColors: {};
-  sassColors: {};
-  htmlColors: {};
+
 
   constructor(private themeService: ThemeService) {
   }
 
   ngOnInit() {
+    // this.arrayOfKeys = Object.keys(this.dataObject);
   }
 
   setColor(propertyName: string, hexCode: string) {
-    if (hexCode.match(/^([A-Fa-f0-9]{6}|[A-Fa-f0-9]{3})$/ig)) {
+    if (hexCode.match(/^([A-Fa-f0-9]{6}|[A-Fa-f0-9]{3})$/ig) && this.theme.hasOwnProperty(propertyName)) {
       this.theme[propertyName] = hexCode;
 
       if (this.codeModule == 'ts') {
