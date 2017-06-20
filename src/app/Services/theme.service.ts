@@ -168,34 +168,36 @@ export class ThemeService {
       tagTreeLevel6: '000'
     };
   }
-  getJSTheme() {
-  return this.jsThemeColors;
-}
-  getTSTheme() {
-    return this.tsThemeColors;
-  }
-  getCSSTheme() {
-    return this.cssThemeColors;
-  }
-  getSASSTheme() {
-    return this.sassThemeColors;
-  }
-  getHTMLTheme() {
-    return this.htmlThemeColors;
+
+  getTheme(language: string) {
+    if (language == 'ts') {
+      return this.tsThemeColors;
+    } else if (language == 'css') {
+      return this.cssThemeColors;
+    } else if (language == 'sass') {
+      return this.sassThemeColors;
+    } else if (language == 'html') {
+      return this.htmlThemeColors;
+    } else
+      return this.jsThemeColors;
   }
 
   setJSTheme(theme: {}) {
     this.jsThemeColors = theme;
   }
+
   setTSTheme(theme: {}) {
     this.tsThemeColors = theme;
   }
+
   setCSSTheme(theme: {}) {
     this.cssThemeColors = theme;
   }
+
   setSASSTheme(theme: {}) {
     this.sassThemeColors = theme;
   }
+
   setHTMLTheme(theme: {}) {
     this.htmlThemeColors = theme;
   }

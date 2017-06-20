@@ -2,7 +2,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
-
+// Components
 import { AppComponent } from './app.component';
 import { ConsoleComponent } from './Components/console/console.component';
 import { SelectionControlsComponent } from './Components/selection-controls/selection-controls.component';
@@ -13,7 +13,8 @@ import { HtmlSandboxComponent } from './Components/console/html-sandbox/html-san
 import { CssSandboxComponent } from './Components/console/css-sandbox/css-sandbox.component';
 import { SassSandboxComponent } from './Components/console/sass-sandbox/sass-sandbox.component';
 import { TypescriptSandboxComponent } from './Components/console/typescript-sandbox/typescript-sandbox.component';
-
+// Services
+import { ThemeService } from './Services/theme.service';
 @NgModule({
   declarations: [
     AppComponent,
@@ -32,7 +33,9 @@ import { TypescriptSandboxComponent } from './Components/console/typescript-sand
     FormsModule,
     HttpModule
   ],
-  providers: [],
+  providers: [
+    ThemeService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
