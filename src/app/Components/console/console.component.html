@@ -7,4 +7,7 @@
   <app-html-sandbox *ngIf="codeModule == 'html'"></app-html-sandbox>
   <app-javascript-sandbox *ngIf="codeModule == 'js'"></app-javascript-sandbox>
   <app-typescript-sandbox *ngIf="codeModule == 'ts'"></app-typescript-sandbox>
+  <pre>
+    {{theme | json}}
+  </pre>
 </div>

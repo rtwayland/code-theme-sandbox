@@ -1,4 +1,4 @@
 <app-navbar (onModuleSelected)="onModuleSelected($event)"></app-navbar>
-<app-console [codeModule]="selectedModule"></app-console>
-<app-selection-controls></app-selection-controls>
+<app-console [codeModule]="selectedModule" [theme]="themeColors"></app-console>
+<app-selection-controls [codeModule]="selectedModule" (onColorSelected)="onColorSelected($event)"></app-selection-controls>
 <app-sidebar></app-sidebar>

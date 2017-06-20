@@ -8,8 +8,13 @@ import { log } from "util";
 })
 export class AppComponent {
   selectedModule: string = 'js'
+  themeColors: {};
 
   onModuleSelected(language: string) {
     this.selectedModule = language;
+  }
+
+  onColorSelected(colors) {
+    this.themeColors = colors;
   }
 }
