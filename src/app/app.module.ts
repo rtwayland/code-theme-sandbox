@@ -8,6 +8,11 @@ import { ConsoleComponent } from './Components/console/console.component';
 import { SelectionControlsComponent } from './Components/selection-controls/selection-controls.component';
 import { NavbarComponent } from './Components/navbar/navbar.component';
 import { SidebarComponent } from './Components/sidebar/sidebar.component';
+import { JavascriptSandboxComponent } from './Components/console/javascript-sandbox/javascript-sandbox.component';
+import { HtmlSandboxComponent } from './Components/console/html-sandbox/html-sandbox.component';
+import { CssSandboxComponent } from './Components/console/css-sandbox/css-sandbox.component';
+import { SassSandboxComponent } from './Components/console/sass-sandbox/sass-sandbox.component';
+import { TypescriptSandboxComponent } from './Components/console/typescript-sandbox/typescript-sandbox.component';
 
 @NgModule({
   declarations: [
@@ -15,7 +20,12 @@ import { SidebarComponent } from './Components/sidebar/sidebar.component';
     ConsoleComponent,
     SelectionControlsComponent,
     NavbarComponent,
-    SidebarComponent
+    SidebarComponent,
+    JavascriptSandboxComponent,
+    HtmlSandboxComponent,
+    CssSandboxComponent,
+    SassSandboxComponent,
+    TypescriptSandboxComponent
   ],
   imports: [
     BrowserModule,
