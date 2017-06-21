@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-typescript-sandbox',
@@ -6,7 +6,8 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./typescript-sandbox.component.scss']
 })
 export class TypescriptSandboxComponent implements OnInit {
-
+  @Input() codeModule: string;
+  @Input() theme: {};
   constructor() { }
 
   ngOnInit() {

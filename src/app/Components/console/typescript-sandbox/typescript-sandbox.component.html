@@ -1,3 +1,30 @@
-<p>
-  typescript-sandbox works!
-</p>
+<section class="code-module" [ngStyle]="{'background-color': '#' + theme.background}">
+  <p><span [ngStyle]="{'color': '#' + theme.keyword}">var</span> <span [ngStyle]="{'color': '#' + theme.globalVariable}">globalVar</span>;</p>
+  <p [ngStyle]="{'color': '#' + theme.docComment}">
+    /**<br>
+    * Constructor for AjaxRequest class<br>
+    * <span [ngStyle]="{'color': '#' + theme.docTag}">@param</span> url the url for the request<br>
+    */
+  </p>
+  <p><span [ngStyle]="{'color': '#' + theme.keyword}">function</span> <span [ngStyle]="{'color': '#' + theme.globalFunction}">AjaxRequest</span>(<span [ngStyle]="{'color': '#' + theme.parameter}">url</span>) <span [ngStyle]="{'color': '#' + theme.braces}">{{ '{' }}</span>
+    <span class="indent">
+            <span [ngStyle]="{'color': '#' + theme.keyword}">var</span> <span [ngStyle]="{'color': '#' + theme.localVariable}">urls</span> <span [ngStyle]="{'color': '#' + theme.operation}">=</span> [ <span [ngStyle]="{'color': '#' + theme.string}">"www.cnn.com"</span>, <span [ngStyle]="{'color': '#' + theme.number}">5</span>, <span [ngStyle]="{'color': '#' + theme.globalVariable}">globalVar</span>];<br>
+            <span [ngStyle]="{'color': '#' + theme.keyword}">this</span>.<span [ngStyle]="{'color': '#' + theme.instanceMemberVariable}">request</span> <span [ngStyle]="{'color': '#' + theme.operation}">=</span> <span [ngStyle]="{'color': '#' + theme.keyword}">new</span> <span [ngStyle]="{'color': '#' + theme.globalFunction}">XMLHttpRequest</span>();<br>
+            <span [ngStyle]="{'color': '#' + theme.parameter}">url</span> <span [ngStyle]="{'color': '#' + theme.operation}">=</span> <span [ngStyle]="{'color': '#' + theme.parameter}">url</span>.replace(<span [ngStyle]="{'color': '#' + theme.regex}">/^\s*(.*)/</span>, <span [ngStyle]="{'color': '#' + theme.string}">"$1"</span>); <span [ngStyle]="{'color': '#' + theme.lineComment}">// skip leading whitespace</span><br>
+            <span [ngStyle]="{'color': '#' + theme.blockComment}">/* check the url to be in urls */</span><br>
+            <span [ngStyle]="{'color': '#' + theme.keyword}">var</span> <span [ngStyle]="{'color': '#' + theme.localVariable}">a</span> <span [ngStyle]="{'color': '#' + theme.operation}">=</span> <span [ngStyle]="{'color': '#' + theme.string}">"</span><span [ngStyle]="{'color': '#' + theme.validStringEscape}">\u1111\z\n</span><span [ngStyle]="{'color': '#' + theme.invalidStringEscape}">\u11</span><span [ngStyle]="{'color': '#' + theme.string}">"</span>;<br>
+            <span [ngStyle]="{'color': '#' + theme.keyword}">this</span>.<span [ngStyle]="{'color': '#' + theme.instanceMemberFunction}">foo</span> <span [ngStyle]="{'color': '#' + theme.operation}">=</span> <span [ngStyle]="{'color': '#' + theme.keyword}">new function</span>() <span [ngStyle]="{'color': '#' + theme.braces}">{{ '{}' }}</span>;<br>
+            <span [ngStyle]="{'color': '#' + theme.instanceMemberFunction}">foo</span>();<br>
+        <span [ngStyle]="{'color': '#' + theme.badChar}">#</span><br>
+            <span [ngStyle]="{'color': '#' + theme.keyword}">var</span> <span [ngStyle]="{'color': '#' + theme.localVariable}">hello</span> <span [ngStyle]="{'color': '#' + theme.operation}">=</span> () <span [ngStyle]="{'color': '#' + theme.arrowFunction}">=></span> console.<span [ngStyle]="{'color': '#' + theme.instanceMemberFunction}">log</span>(<span [ngStyle]="{'color': '#' + theme.string}">"hello"</span>)</span>
+    <span [ngStyle]="{'color': '#' + theme.braces}">{{ '}' }}</span>
+  </p>
+  <p>
+    <span [ngStyle]="{'color': '#' + theme.keyword}">class</span> <span [ngStyle]="{'color': '#' + theme.className}">NameClass</span> <span [ngStyle]="{'color': '#' + theme.braces}">{{ '{' }}</span><br>
+    <span [ngStyle]="{'color': '#' + theme.braces}">{{ '}' }}</span>
+  </p>
+  <p>
+    <span [ngStyle]="{'color': '#' + theme.keyword}">declare</span> <span [ngStyle]="{'color': '#' + theme.keyword}">module</span> <span [ngStyle]="{'color': '#' + theme.moduleName}">name</span> <span [ngStyle]="{'color': '#' + theme.braces}">{{ '{' }}</span><br>
+    <span [ngStyle]="{'color': '#' + theme.braces}">{{ '}' }}</span>
+  </p>
+</section>
