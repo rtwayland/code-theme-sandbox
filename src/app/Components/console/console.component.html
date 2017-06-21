@@ -1,12 +1,8 @@
 <p>
   console works!
 </p>
-<div style="margin-left: 50px">
-  <app-css-sandbox *ngIf="codeModule == 'css'"></app-css-sandbox>
-  <app-sass-sandbox *ngIf="codeModule == 'sass'"></app-sass-sandbox>
-  <app-html-sandbox *ngIf="codeModule == 'html'"></app-html-sandbox>
-  <app-javascript-sandbox *ngIf="codeModule == 'js'"></app-javascript-sandbox>
-  <app-typescript-sandbox *ngIf="codeModule == 'ts'"></app-typescript-sandbox>
+<div class="code-module-container">
+  <app-code-module  [codeModule]="codeModule" [theme]="theme"></app-code-module>
   <pre>
     {{theme | json}}
   </pre>
