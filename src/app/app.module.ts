@@ -15,7 +15,6 @@ import { SassSandboxComponent } from './Components/console/sass-sandbox/sass-san
 import { TypescriptSandboxComponent } from './Components/console/typescript-sandbox/typescript-sandbox.component';
 // Services
 import { ThemeService } from './Services/theme.service';
-import { CodeModuleComponent } from './Components/console/code-module/code-module.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -27,8 +26,7 @@ import { CodeModuleComponent } from './Components/console/code-module/code-modul
     HtmlSandboxComponent,
     CssSandboxComponent,
     SassSandboxComponent,
-    TypescriptSandboxComponent,
-    CodeModuleComponent
+    TypescriptSandboxComponent
   ],
   imports: [
     BrowserModule,
