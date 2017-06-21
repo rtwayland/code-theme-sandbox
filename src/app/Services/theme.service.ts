@@ -4,19 +4,19 @@ import "rxjs/add/operator/share";
 
 @Injectable()
 export class ThemeService {
-  jsThemeColors: {};
+  jsThemeColors: any;
   jsThemeColorsSource = new BehaviorSubject<any>({});
   jsThemeColors$ = this.jsThemeColorsSource.asObservable().share();
-  tsThemeColors: {};
+  tsThemeColors: any;
   tsThemeColorsSource = new BehaviorSubject<any>({});
   tsThemeColors$ = this.tsThemeColorsSource.asObservable().share();
-  cssThemeColors: {};
+  cssThemeColors: any;
   cssThemeColorsSource = new BehaviorSubject<any>({});
   cssThemeColors$ = this.cssThemeColorsSource.asObservable().share();
-  sassThemeColors: {};
+  sassThemeColors: any;
   sassThemeColorsSource = new BehaviorSubject<any>({});
   sassThemeColors$ = this.sassThemeColorsSource.asObservable().share();
-  htmlThemeColors: {};
+  htmlThemeColors: any;
   htmlThemeColorsSource = new BehaviorSubject<any>({});
   htmlThemeColors$ = this.htmlThemeColorsSource.asObservable().share();
 
@@ -217,6 +217,14 @@ export class ThemeService {
   setHTMLTheme(theme: {}) {
     this.htmlThemeColors = theme;
     this.htmlThemeColorsSource.next(this.htmlThemeColors);
+  }
+
+  setAllBGColors(color: string) {
+    this.jsThemeColors.background = color;
+    this.tsThemeColors.background = color;
+    this.cssThemeColors.background = color;
+    this.sassThemeColors.background = color;
+    this.htmlThemeColors.background = color;
   }
 
 }

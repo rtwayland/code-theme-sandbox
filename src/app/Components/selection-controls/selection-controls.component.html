@@ -1,8 +1,12 @@
-<form name="colorSelectionForm">
-  <div class="color-input" *ngFor="let prop of propertyArray">
-    <label [for]="prop">{{prop}}</label>
-    <input [pattern]="hexPattern" type="text" [name]="prop" [id]="prop" [(ngModel)]="theme[prop]">
-  </div>
-</form>
-<button type="button" (click)="setColor('background', 'CCC')">Set Color Scheme</button>
+<div class="selection-controls-container">
+  <app-javascript-controls [theme]="theme"></app-javascript-controls>
+</div>
+
+<!--<form name="colorSelectionForm">-->
+<!--<div class="color-input" *ngFor="let prop of propertyArray">-->
+<!--<label [for]="prop">{{prop}}</label>-->
+<!--<input [pattern]="hexPattern" type="text" [name]="prop" [id]="prop" [(ngModel)]="theme[prop]">-->
+<!--</div>-->
+<!--</form>-->
+<!--<button type="button" (click)="setColor('background', 'CCC')">Set Color Scheme</button>-->
 <!--<pre>{{theme | json}}</pre>-->

@@ -1,0 +1,166 @@
+<section class="controls-container">
+  <h2><span class="accordion-toggle" (click)="hideGlobals = !hideGlobals">{{!hideGlobals ? 'hide' : 'show'}}</span>Global Colors {{!hideGlobals ? '' : '...'}}</h2>
+  <section class="global-colors" *ngIf="!hideGlobals">
+    <div class="color-input-container">
+      <label for="background">Background</label>
+      <input type="text" name="background" id="background" [(ngModel)]="theme.background" (keyup)="applyColorToLanguages()">
+      <div class="sub-option">
+        <label for="apply-to-languages">Apply to all languages?</label>
+        <input type="checkbox" name="apply-to-languages" id="apply-to-languages" [checked]="languagesShareBGColor" (change)="languagesShareBGColor = !languagesShareBGColor; applyColorToLanguages()">
+      </div>
+    </div>
+    <div class="color-input-container">
+      <label for="defaultText">Default Text</label>
+      <input type="text" name="defaultText" id="defaultText" [(ngModel)]="theme.defaultText" (keyup)="applyColorToGrammars()">
+      <div class="sub-option">
+        <label for="apply-to-grammar">Apply this color to grammars?</label>
+        <input type="checkbox" name="apply-to-grammar" id="apply-to-grammar" [checked]="grammarsShareDefaultColor" (change)="grammarsShareDefaultColor = !grammarsShareDefaultColor; applyColorToGrammars()">
+      </div>
+    </div>
+  </section>
+  <h2><span class="accordion-toggle" (click)="hideNotation = !hideNotation">{{!hideNotation ? 'hide' : 'show'}}</span>Notation Colors {{!hideNotation ? '' : '...'}}</h2>
+  <section class="grammar" *ngIf="!hideNotation">
+    <div class="color-input-container">
+      <label for="braces">Braces</label>
+      <input type="text" name="braces" id="braces" [(ngModel)]="theme.braces">
+    </div>
+    <div class="color-input-container">
+      <label for="brackets">Brackets</label>
+      <input type="text" name="brackets" id="brackets" [(ngModel)]="theme.brackets">
+    </div>
+    <div class="color-input-container">
+      <label for="parenthesis">Parenthesis</label>
+      <input type="text" name="parenthesis" id="parenthesis" [(ngModel)]="theme.parenthesis">
+    </div>
+    <div class="color-input-container">
+      <label for="semicolon">Semicolon</label>
+      <input type="text" name="semicolon" id="semicolon" [(ngModel)]="theme.semicolon">
+    </div>
+    <div class="color-input-container">
+      <label for="dot">Dot</label>
+      <input type="text" name="dot" id="dot" [(ngModel)]="theme.dot">
+    </div>
+    <div class="color-input-container">
+      <label for="comma">Comma</label>
+      <input type="text" name="comma" id="comma" [(ngModel)]="theme.comma">
+    </div>
+    <div class="color-input-container">
+      <label for="badChar">Bad Character</label>
+      <input type="text" name="badChar" id="badChar" [(ngModel)]="theme.badChar">
+    </div>
+  </section>
+  <h2><span class="accordion-toggle" (click)="hideComments = !hideComments">{{!hideComments ? 'hide' : 'show'}}</span>Comment Colors {{!hideComments ? '' : '...'}}</h2>
+  <section class="comments" *ngIf="!hideComments">
+    <div class="color-input-container">
+      <label for="blockComment">Block Comment</label>
+      <input type="text" name="blockComment" id="blockComment" [(ngModel)]="theme.blockComment">
+    </div>
+    <div class="color-input-container">
+      <label for="lineComment">Line Comment</label>
+      <input type="text" name="lineComment" id="lineComment" [(ngModel)]="theme.lineComment">
+    </div>
+    <div class="color-input-container">
+      <label for="docComment">Doc Comment</label>
+      <input type="text" name="docComment" id="docComment" [(ngModel)]="theme.docComment">
+    </div>
+    <div class="color-input-container">
+      <label for="docMarkup">Doc Markup</label>
+      <input type="text" name="docMarkup" id="docMarkup" [(ngModel)]="theme.docMarkup">
+    </div>
+    <div class="color-input-container">
+      <label for="docTag">Doc Tag</label>
+      <input type="text" name="docTag" id="docTag" [(ngModel)]="theme.docTag">
+    </div>
+
+  </section>
+
+  <h2><span class="accordion-toggle" (click)="hideKeywords = !hideKeywords">{{!hideKeywords ? 'hide' : 'show'}}</span>Keyword Colors {{!hideKeywords ? '' : '...'}}</h2>
+  <section class="keywords" *ngIf="!hideKeywords">
+    <div class="color-input-container">
+      <label for="keyword">Keyword</label>
+      <input type="text" name="keyword" id="keyword" [(ngModel)]="theme.keyword">
+    </div>
+    <div class="color-input-container">
+      <label for="number">Number</label>
+      <input type="text" name="number" id="number" [(ngModel)]="theme.number">
+    </div>
+    <div class="color-input-container">
+      <label for="operation">Operation</label>
+      <input type="text" name="operation" id="operation" [(ngModel)]="theme.operation">
+    </div>
+    <div class="color-input-container">
+      <label for="label">Label</label>
+      <input type="text" name="label" id="label" [(ngModel)]="theme.label">
+    </div>
+  </section>
+
+  <h2><span class="accordion-toggle" (click)="hideFunctions = !hideFunctions">{{!hideFunctions ? 'hide' : 'show'}}</span>Function Colors {{!hideFunctions ? '' : '...'}}</h2>
+  <section class="functions" *ngIf="!hideFunctions">
+    <div class="color-input-container">
+      <label for="globalFunction">Global Function</label>
+      <input type="text" name="globalFunction" id="globalFunction" [(ngModel)]="theme.globalFunction">
+    </div>
+    <div class="color-input-container">
+      <label for="instanceMemberFunction">Instance Member Function</label>
+      <input type="text" name="instanceMemberFunction" id="instanceMemberFunction" [(ngModel)]="theme.instanceMemberFunction">
+    </div>
+    <div class="color-input-container">
+      <label for="staticMemberFunction">Static Member Function</label>
+      <input type="text" name="staticMemberFunction" id="staticMemberFunction" [(ngModel)]="theme.staticMemberFunction">
+    </div>
+    <div class="color-input-container">
+      <label for="arrowFunction">Arrow Function</label>
+      <input type="text" name="arrowFunction" id="arrowFunction" [(ngModel)]="theme.arrowFunction">
+    </div>
+    <div class="color-input-container">
+      <label for="className">Class Name</label>
+      <input type="text" name="className" id="className" [(ngModel)]="theme.className">
+    </div>
+    <div class="color-input-container">
+      <label for="moduleName">Module Name</label>
+      <input type="text" name="moduleName" id="moduleName" [(ngModel)]="theme.moduleName">
+    </div>
+  </section>
+  <h2><span class="accordion-toggle" (click)="hideVariables = !hideVariables">{{!hideVariables ? 'hide' : 'show'}}</span>Variable Colors {{!hideVariables ? '' : '...'}}</h2>
+  <section class="variables" *ngIf="!hideVariables">
+    <div class="color-input-container">
+      <label for="localVariable">Local Variable</label>
+      <input type="text" name="localVariable" id="localVariable" [(ngModel)]="theme.localVariable">
+    </div>
+    <div class="color-input-container">
+      <label for="parameter">Parameter</label>
+      <input type="text" name="parameter" id="parameter" [(ngModel)]="theme.parameter">
+    </div>
+    <div class="color-input-container">
+      <label for="globalVariable">Global Variable</label>
+      <input type="text" name="globalVariable" id="globalVariable" [(ngModel)]="theme.globalVariable">
+    </div>
+    <div class="color-input-container">
+      <label for="instanceMemberVariable">Instance Member Variable</label>
+      <input type="text" name="instanceMemberVariable" id="instanceMemberVariable" [(ngModel)]="theme.instanceMemberVariable">
+    </div>
+    <div class="color-input-container">
+      <label for="staticMemberVariable">Static Member Variable</label>
+      <input type="text" name="staticMemberVariable" id="staticMemberVariable" [(ngModel)]="theme.staticMemberVariable">
+    </div>
+  </section>
+  <h2><span class="accordion-toggle" (click)="hideStrings = !hideStrings">{{!hideStrings ? 'hide' : 'show'}}</span>String Colors {{!hideStrings ? '' : '...'}}</h2>
+  <section class="strings" *ngIf="!hideStrings">
+    <div class="color-input-container">
+      <label for="string">String</label>
+      <input type="text" name="string" id="string" [(ngModel)]="theme.string">
+    </div>
+    <div class="color-input-container">
+      <label for="validStringEscape">Valid String Escape</label>
+      <input type="text" name="validStringEscape" id="validStringEscape" [(ngModel)]="theme.validStringEscape">
+    </div>
+    <div class="color-input-container">
+      <label for="invalidStringEscape">Invalid String Escape</label>
+      <input type="text" name="invalidStringEscape" id="invalidStringEscape" [(ngModel)]="theme.invalidStringEscape">
+    </div>
+    <div class="color-input-container">
+      <label for="regex">Regular Expression</label>
+      <input type="text" name="regex" id="regex" [(ngModel)]="theme.regex">
+    </div>
+  </section>
+</section>
