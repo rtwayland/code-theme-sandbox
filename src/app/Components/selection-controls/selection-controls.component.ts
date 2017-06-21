@@ -1,4 +1,4 @@
-import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { Component, EventEmitter, Input, OnChanges, OnInit, Output } from '@angular/core';
 import { ThemeService } from "../../Services/theme.service";
 
 @Component({
@@ -6,20 +6,24 @@ import { ThemeService } from "../../Services/theme.service";
   templateUrl: './selection-controls.component.html',
   styleUrls: ['./selection-controls.component.scss']
 })
-export class SelectionControlsComponent implements OnInit {
+export class SelectionControlsComponent implements OnInit, OnChanges {
   @Input() codeModule: string;
   @Input() theme: {};
+  propertyArray: string[];
+  hexPattern: string|RegExp;
 
 
   constructor(private themeService: ThemeService) {
   }
 
   ngOnInit() {
-    // this.arrayOfKeys = Object.keys(this.dataObject);
+    this.hexPattern = '([0-9A-Fa-f]{3}){1,2}';
   }
-
+  ngOnChanges() {
+    this.propertyArray = Object.keys(this.theme);
+  }
   setColor(propertyName: string, hexCode: string) {
-    if (hexCode.match(/^([A-Fa-f0-9]{6}|[A-Fa-f0-9]{3})$/ig) && this.theme.hasOwnProperty(propertyName)) {
+    if (hexCode.match(/([0-9A-Fa-f]{3}){1,2}/) && this.theme.hasOwnProperty(propertyName)) {
       this.theme[propertyName] = hexCode;
 
       if (this.codeModule == 'ts') {
