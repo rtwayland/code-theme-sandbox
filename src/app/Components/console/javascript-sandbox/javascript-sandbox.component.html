@@ -1,3 +1,30 @@
-<p>
-  javascript-sandbox works!
-</p>
+<section class="code-module">
+    <p><span class="keyword">var</span> <span class="globalVar">globalVar</span>;</p>
+    <p class="comment">
+      /**<br>
+      * Constructor for AjaxRequest class<br>
+      * <span class="docTag">@param</span> url the url for the request<br>
+      */
+    </p>
+  <p><span class="keyword">function</span> <span class="globalFunction">AjaxRequest</span>(<span class="parameter">url</span>) <span class="brace">{{ '{' }}</span>
+      <span class="indent">
+        <span class="keyword">var</span> <span class="localVar">urls</span> <span class="operation">=</span> [ <span class="string">"www.cnn.com"</span>, <span class="number">5</span>, <span class="globalVar">globalVar</span>];<br>
+        <span class="keyword">this</span>.<span class="instanceMemberVar">request</span> <span class="operation">=</span> <span class="keyword">new</span> <span class="globalFunction">XMLHttpRequest</span>();<br>
+        <span class="parameter">url</span> <span class="operation">=</span> <span class="parameter">url</span>.replace(<span class="regex">/^\s*(.*)/</span>, <span class="string">"$1"</span>); <span class="comment">// skip leading whitespace</span><br>
+        <span class="comment">/* check the url to be in urls */</span><br>
+        <span class="keyword">var</span> <span class="localVar">a</span> <span class="operation">=</span> <span class="string">"</span><span class="validStringEscape">\u1111\z\n</span><span class="invalidStringEscape">\u11</span><span class="string">"</span>;<br>
+        <span class="keyword">this</span>.<span class="instanceMemberFunction">foo</span> <span class="operation">=</span> <span class="keyword">new function</span>() <span class="brace">{{ '{}' }}</span>;<br>
+        <span class="instanceMemberFunction">foo</span>();<br>
+    <span class="badChar">#</span><br>
+        <span class="keyword">var</span> <span class="localVar">hello</span> <span class="operation">=</span> () <span class="arrowFunction">=></span> console.<span class="instanceMemberFunction">log</span>(<span class="string">"hello"</span>)</span>
+      <span class="brace">{{ '}' }}</span>
+    </p>
+    <p>
+      <span class="keyword">class</span> <span class="className">NameClass</span> <span class="brace">{{ '{' }}</span><br>
+      <span class="brace">{{ '}' }}</span>
+    </p>
+    <p>
+      <span class="keyword">declare</span> <span class="keyword">module</span> <span class="moduleName">name</span> <span class="brace">{{ '{' }}</span><br>
+      <span class="brace">{{ '}' }}</span>
+    </p>
+</section>
