@@ -23,7 +23,6 @@ export class ThemeService {
 
   constructor() {
     this.jsThemeColors = {
-      js: true,
       background: 'fff',
       defaultText: '000',
       arrowFunction: '000',
@@ -59,7 +58,6 @@ export class ThemeService {
       validStringEscape: '000'
     };
     this.tsThemeColors = {
-      ts: true,
       background: 'fff',
       defaultText: '000',
       arrowFunction: '000',
@@ -97,7 +95,6 @@ export class ThemeService {
       validStringEscape: '000'
     };
     this.cssThemeColors = {
-      css: true,
       background: 'fff',
       defaultText: '000',
       badChar: '000',
@@ -126,7 +123,6 @@ export class ThemeService {
       url: '000'
     };
     this.sassThemeColors = {
-      sass: true,
       background: 'fff',
       defaultText: '000',
       badChar: '000',
@@ -162,7 +158,6 @@ export class ThemeService {
       variable: '000'
     };
     this.htmlThemeColors = {
-      html: true,
       background: 'fff',
       defaultText: '000',
       attributeName: '000',
