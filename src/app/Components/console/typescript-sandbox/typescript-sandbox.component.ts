@@ -6,7 +6,6 @@ import { Component, Input, OnInit } from '@angular/core';
   styleUrls: ['./typescript-sandbox.component.scss']
 })
 export class TypescriptSandboxComponent implements OnInit {
-  @Input() codeModule: string;
   @Input() theme: {};
   constructor() { }
 
