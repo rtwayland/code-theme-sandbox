@@ -16,6 +16,7 @@ import { TypescriptSandboxComponent } from './Components/console/typescript-sand
 // Services
 import { ThemeService } from './Services/theme.service';
 import { JavascriptControlsComponent } from './Components/selection-controls/javascript-controls/javascript-controls.component';
+import { TypescriptControlsComponent } from './Components/selection-controls/typescript-controls/typescript-controls.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -28,7 +29,8 @@ import { JavascriptControlsComponent } from './Components/selection-controls/jav
     CssSandboxComponent,
     SassSandboxComponent,
     TypescriptSandboxComponent,
-    JavascriptControlsComponent
+    JavascriptControlsComponent,
+    TypescriptControlsComponent
   ],
   imports: [
     BrowserModule,
