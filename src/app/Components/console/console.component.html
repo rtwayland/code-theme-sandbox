@@ -1,13 +1,13 @@
 <p>
   console works!
 </p>
-<div>
+<div [ngSwitch]="codeModule">
   <!--<app-code-module  [codeModule]="codeModule" [theme]="theme"></app-code-module>-->
   <!--<app-css-sandbox *ngIf="codeModule == 'css'"></app-css-sandbox>-->
   <!--<app-sass-sandbox *ngIf="codeModule == 'sass'"></app-sass-sandbox>-->
-  <!--<app-html-sandbox *ngIf="codeModule == 'html'"></app-html-sandbox>-->
-  <app-javascript-sandbox *ngIf="codeModule == 'js'" [theme]="theme"></app-javascript-sandbox>
-  <app-typescript-sandbox *ngIf="codeModule == 'ts'"  [theme]="theme"></app-typescript-sandbox>
+  <app-html-sandbox *ngSwitchCase="'html'" [theme]="theme"></app-html-sandbox>
+  <app-typescript-sandbox *ngSwitchCase="'ts'" [theme]="theme"></app-typescript-sandbox>
+  <app-javascript-sandbox *ngSwitchDefault [theme]="theme"></app-javascript-sandbox>
   <!--<pre>-->
     <!--{{theme | json}}-->
   <!--</pre>-->

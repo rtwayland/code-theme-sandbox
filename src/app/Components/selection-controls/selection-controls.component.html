@@ -1,5 +1,6 @@
 <div class="selection-controls-container">
-  <app-javascript-controls [theme]="theme"></app-javascript-controls>
+  <app-javascript-controls [theme]="theme" *ngIf="codeModule == 'js'"></app-javascript-controls>
+  <app-typescript-controls [theme]="theme" *ngIf="codeModule == 'ts'"></app-typescript-controls>
 </div>
 
 <!--<form name="colorSelectionForm">-->
