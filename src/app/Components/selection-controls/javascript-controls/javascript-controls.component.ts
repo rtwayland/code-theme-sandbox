@@ -23,7 +23,7 @@ export class JavascriptControlsComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.hexPattern = '([0-9A-Fa-f]{3}){1,2}';
+    this.hexPattern = '^(?:[0-9a-fA-F]{3}){1,2}$';
   }
   applyColorToLanguages() {
     if (this.languagesShareBGColor) {
