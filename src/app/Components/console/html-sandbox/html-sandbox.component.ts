@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-html-sandbox',
@@ -6,7 +6,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./html-sandbox.component.scss']
 })
 export class HtmlSandboxComponent implements OnInit {
-
+  @Input() theme: {};
   constructor() { }
 
   ngOnInit() {
