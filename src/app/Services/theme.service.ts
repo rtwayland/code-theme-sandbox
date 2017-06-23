@@ -59,40 +59,40 @@ export class ThemeService {
     };
     this.tsThemeColors = {
       background: 'fff',
-      defaultText: '000',
-      arrowFunction: '000',
-      badChar: '000',
-      blockComment: '000',
-      braces: '000',
-      brackets: '000',
-      className: '000',
-      comma: '000',
-      docComment: '000',
-      docMarkup: '000',
-      docTag: '000',
-      dot: '000',
-      globalFunction: '000',
-      globalVariable: '000',
-      instanceMemberFunction: '000',
-      instanceMemberVariable: '000',
-      interfaceName: '000',
-      invalidStringEscape: '000',
-      keyword: '000',
-      label: '000',
-      lineComment: '000',
-      localVariable: '000',
-      moduleName: '000',
-      number: '000',
-      operation: '000',
-      parameter: '000',
-      parenthesis: '000',
-      regex: '000',
-      semicolon: '000',
-      staticMemberFunction: '000',
-      staticMemberVariable: '000',
-      string: '000',
-      typeParameter: '000',
-      validStringEscape: '000'
+      defaultText: 'f00',
+      arrowFunction: 'f00',
+      badChar: 'f00',
+      blockComment: 'f00',
+      braces: 'f00',
+      brackets: 'f00',
+      className: 'f00',
+      comma: 'f00',
+      docComment: 'f00',
+      docMarkup: 'f00',
+      docTag: 'f00',
+      dot: 'f00',
+      globalFunction: 'f00',
+      globalVariable: 'f00',
+      instanceMemberFunction: 'f00',
+      instanceMemberVariable: 'f00',
+      interfaceName: 'f00',
+      invalidStringEscape: 'f00',
+      keyword: 'f00',
+      label: 'f00',
+      lineComment: 'f00',
+      localVariable: 'f00',
+      moduleName: 'f00',
+      number: 'f00',
+      operation: 'f00',
+      parameter: 'f00',
+      parenthesis: 'f00',
+      regex: 'f00',
+      semicolon: 'f00',
+      staticMemberFunction: 'f00',
+      staticMemberVariable: 'f00',
+      string: 'f00',
+      typeParameter: 'f00',
+      validStringEscape: 'f00'
     };
     this.cssThemeColors = {
       background: 'fff',
@@ -182,16 +182,11 @@ export class ThemeService {
   }
 
   getTheme(language: string) {
-    if (language == 'ts') {
-      return this.tsThemeColors;
-    } else if (language == 'css') {
-      return this.cssThemeColors;
-    } else if (language == 'sass') {
-      return this.sassThemeColors;
-    } else if (language == 'html') {
-      return this.htmlThemeColors;
-    } else
-      return this.jsThemeColors;
+    return this[`${language}ThemeColors`];
+  }
+
+  updateTheme(language: string) {
+    this[`${language}ThemeColorsSource`].next(this[`${language}ThemeColors`]);
   }
 
   setJSTheme(theme: {}) {
@@ -220,11 +215,13 @@ export class ThemeService {
   }
 
   setAllBGColors(color: string) {
-    this.jsThemeColors.background = color;
-    this.tsThemeColors.background = color;
-    this.cssThemeColors.background = color;
-    this.sassThemeColors.background = color;
-    this.htmlThemeColors.background = color;
+    if (color.match(/^(?:[0-9a-fA-F]{3}){1,2}$/)) {
+      this.jsThemeColors.background = color;
+      this.tsThemeColors.background = color;
+      this.cssThemeColors.background = color;
+      this.sassThemeColors.background = color;
+      this.htmlThemeColors.background = color;
+    }
   }
 
 }
