@@ -1,0 +1,56 @@
+<section class="controls-container">
+  <h2><span class="accordion-toggle" (click)="hideGlobals = !hideGlobals">{{!hideGlobals ? 'hide' : 'show'}}</span>Global Colors {{!hideGlobals ? '' : '...'}}</h2>
+  <section class="global-colors" *ngIf="!hideGlobals">
+    <div class="color-input-container">
+      <label for="background">Background</label>
+      <input type="text" name="background" id="background" [(ngModel)]="theme.background" (keyup)="applyColorToLanguages()">
+      <div class="sub-option">
+        <label for="apply-to-languages">Apply to all languages?</label>
+        <input type="checkbox" name="apply-to-languages" id="apply-to-languages" [checked]="languagesShareBGColor" (change)="languagesShareBGColor = !languagesShareBGColor; applyColorToLanguages()">
+      </div>
+    </div>
+    <div class="color-input-container">
+      <label for="defaultText">Default Text</label>
+      <input type="text" name="defaultText" id="defaultText" [(ngModel)]="theme.defaultText">
+    </div>
+  </section>
+  <h2><span class="accordion-toggle" (click)="hideTags = !hideTags">{{!hideTags ? 'hide' : 'show'}}</span>Tag Colors {{!hideTags ? '' : '...'}}</h2>
+  <section class="tags" *ngIf="!hideTags">
+    <div class="color-input-container">
+      <label for="tag">Tags</label>
+      <input type="text" name="tag" id="tag" [(ngModel)]="theme.tag">
+    </div>
+    <div class="color-input-container">
+      <label for="tagNames">Tag Names</label>
+      <input type="text" name="tagNames" id="tagNames" [(ngModel)]="theme.tagNames">
+    </div>
+    </section>
+  <h2><span class="accordion-toggle" (click)="hideComments = !hideComments">{{!hideComments ? 'hide' : 'show'}}</span>Comment Colors {{!hideComments ? '' : '...'}}</h2>
+  <section class="comments" *ngIf="!hideComments">
+    <div class="color-input-container">
+      <label for="comment">Comment</label>
+      <input type="text" name="comment" id="comment" [(ngModel)]="theme.comment">
+    </div>
+    </section>
+
+  <h2><span class="accordion-toggle" (click)="hideAttributes = !hideAttributes">{{!hideAttributes ? 'hide' : 'show'}}</span>Keyword Colors {{!hideAttributes ? '' : '...'}}</h2>
+  <section class="attributes" *ngIf="!hideAttributes">
+    <div class="color-input-container">
+      <label for="attributeName">Attribute Names</label>
+      <input type="text" name="attributeName" id="attributeName" [(ngModel)]="theme.attributeName">
+    </div>
+    <div class="color-input-container">
+      <label for="attributeValue">Attribute Values</label>
+      <input type="text" name="attributeValue" id="attributeValue" [(ngModel)]="theme.attributeValue">
+    </div>
+  </section>
+
+  <h2><span class="accordion-toggle" (click)="hideEntities = !hideEntities">{{!hideEntities ? 'hide' : 'show'}}</span>Entity Reference Colors {{!hideEntities ? '' : '...'}}</h2>
+  <section class="functions" *ngIf="!hideEntities">
+    <div class="color-input-container">
+      <label for="entityRef">Entity Reference</label>
+      <input type="text" name="entityRef" id="entityRef" [(ngModel)]="theme.entityRef">
+    </div>
+  </section>
+
+</section>
