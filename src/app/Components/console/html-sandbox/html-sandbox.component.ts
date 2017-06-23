@@ -7,6 +7,7 @@ import { Component, Input, OnInit } from '@angular/core';
 })
 export class HtmlSandboxComponent implements OnInit {
   @Input() theme: {};
+  htmlEntityExample: string = '&#x00B7; &Alpha;';
   constructor() { }
 
   ngOnInit() {
