@@ -16,6 +16,7 @@ export class TypescriptControlsComponent implements OnInit {
   hideFunctions: boolean = false;
   hideVariables: boolean = false;
   hideStrings: boolean = false;
+  isInheritingJS: boolean = false;
   grammarsShareDefaultColor: boolean = false;
   languagesShareBGColor: boolean = false;
 
@@ -23,7 +24,13 @@ export class TypescriptControlsComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.hexPattern = '([0-9A-Fa-f]{3}){1,2}';
+    this.hexPattern = '^(?:[0-9a-fA-F]{3}){1,2}$';
+  }
+  inheritThemeFromJS() {
+      let jsTheme = this.themeService.getTheme('js');
+      let mergedTheme = {...this.theme, ...jsTheme};
+      this.themeService.setTSTheme(mergedTheme);
+      this.theme = mergedTheme;
   }
   applyColorToLanguages() {
     if (this.languagesShareBGColor) {

@@ -1,4 +1,8 @@
 <section class="controls-container">
+  <div class="sub-option">
+    <label for="inheritFromJS">Inherit colors from JavaScript?</label>
+    <input type="checkbox" name="inheritFromJS" id="inheritFromJS" [checked]="isInheritingJS" (change)="isInheritingJS = !isInheritingJS; inheritThemeFromJS()">
+  </div>
   <h2><span class="accordion-toggle" (click)="hideGlobals = !hideGlobals">{{!hideGlobals ? 'hide' : 'show'}}</span>Global Colors {{!hideGlobals ? '' : '...'}}</h2>
   <section class="global-colors" *ngIf="!hideGlobals">
     <div class="color-input-container">
