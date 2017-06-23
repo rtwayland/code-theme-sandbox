@@ -3,12 +3,51 @@ body {
   margin: 0;
   width: 100%;
 }
+
 .code-module {
   font-family: Menlo;
   width: 100%;
   padding: 50px;
 }
+
 .indent {
   display: block;
   padding-left: 30px;
+}
+
+.controls-container {
+  font-family: sans-serif;
+  section {
+    margin-left: 20px;
+    margin-bottom: 30px;
+    display: flex;
+    flex-flow: row wrap;
+    //justify-content: space-between;
+
+  }
+}
+
+.color-input-container {
+  margin-right: 20px;
+  & > label {
+    text-align: center;
+    display: block;
+  }
+
+  & > input {
+    margin: auto;
+    display: block;
+    border: none;
+    border-radius: 2px;
+    padding: 5px;
+    font-size: 1em;
+    text-align: center;
+    width: 75px;
+  }
+
+}
+
+.accordion-toggle {
+  font-size: 10px;
+  color: #222;
 }
